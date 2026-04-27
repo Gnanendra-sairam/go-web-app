@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: gutlapallisairam/go-web-app
-  tag: "v7"
+  tag: "25012044070"
   pullPolicy: IfNotPresent
 ingress:
   enabled: false
