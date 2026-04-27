@@ -1,0 +1,15 @@
+replicaCount: 1
+image:
+  repository: gutlapallisairam/go-web-app
+  tag: "v7"
+  pullPolicy: IfNotPresent
+ingress:
+  enabled: false
+  className: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  hosts:
+    - host: go-web-app.local
+      paths:
+        - path: /
+          pathType: Prefix
