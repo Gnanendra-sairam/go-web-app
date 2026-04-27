@@ -20,16 +20,17 @@ jobs:
       run: go build -o my-web-app 
     - name: Run tests
       run: go test ./...
-  code-quality:        
+  code-quality:
     runs-on: ubuntu-latest
-    needs: build
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
     - name: Run golangci-lint
-      uses: golangci/golangci-lint-action@v2
+      uses: golangci/golangci-lint-action@v6
       with:
-        version: v1.50.0
+        version: v1.56.2
   push:
     runs-on: ubuntu-latest
     needs: build
